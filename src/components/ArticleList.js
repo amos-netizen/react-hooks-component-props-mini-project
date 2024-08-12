@@ -1,19 +1,18 @@
-import React from 'react';
-import Article from './Article';
-
-function ArticleList({ articles = [] }) {
+import React from "react";
+import Article from "./Article";
+const ArticleList = ({ posts }) => {
   return (
     <main>
-      {articles.map(article => (
-        <Article 
-          key={article.id}
-          title={article.title}
-          date={article.date}
-          preview={article.preview}
+      {posts.map((post, index) => (
+        <Article
+          key={index}
+          title={post.title}
+          date={post.date}
+          preview={post.preview}
         />
       ))}
     </main>
   );
-}
+};
 
-export default ArticleList;
+export default ArticleList; 
